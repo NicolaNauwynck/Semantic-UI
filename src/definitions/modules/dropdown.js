@@ -711,7 +711,7 @@ $.fn.dropdown = function(parameters) {
                     results.push(this);
                     return true;
                   }
-                  else if(settings.fullTextSearch && module.fuzzySearch(searchTerm, text)) {
+                  else if(settings.fullTextSearch && text.toLowerCase().indexOf(searchTerm.toLowerCase()) > -1) {
                     results.push(this);
                     return true;
                   }
@@ -723,7 +723,7 @@ $.fn.dropdown = function(parameters) {
                     results.push(this);
                     return true;
                   }
-                  else if(settings.fullTextSearch && module.fuzzySearch(searchTerm, value)) {
+                  else if(settings.fullTextSearch && value.toLowerCase().indexOf(searchTerm.toLowerCase()) > -1) {
                     results.push(this);
                     return true;
                   }
